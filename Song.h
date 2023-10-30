@@ -5,13 +5,14 @@
 #ifndef MUSICPLAYER_SONG_H
 #define MUSICPLAYER_SONG_H
 
+#include <cstdlib> // allows us to use NULL
 #include <string>
 
 class Song {
 public:
     typedef std::string string;
     //constructor
-    Song(const string&, Song*, Song*);
+    Song(const string& data = "test", Song* previous_link = NULL, Song* next_link = NULL);
 private:
     string song_file_name;
     Song* next_song_ptr;
